@@ -1,0 +1,33 @@
+{% macro nav(active) -%}
+<header class="navbar">
+  <div class="nav-left">
+    <a href="{{ url_for('dashboard') }}"><img src="{{ url_for('static', filename='logo.png') }}" alt="CarbonTrack"></a>
+    <nav class="nav-links">
+      <a href="{{ url_for('dashboard') }}" class="{{ 'active' if active=='dashboard' else '' }}">Dashboard</a>
+      <a href="{{ url_for('emissoes') }}" class="{{ 'active' if active=='emissoes' else '' }}">Emissões</a>
+      <a href="{{ url_for('relatorios') }}" class="{{ 'active' if active=='relatorios' else '' }}">Relatórios</a>
+      <a href="{{ url_for('caminhoes') }}" class="{{ 'active' if active=='caminhoes' else '' }}">Caminhões</a>
+      <a href="{{ url_for('config') }}" class="{{ 'active' if active=='config' else '' }}">Configurações</a>
+    </nav>
+  </div>
+  <div class="nav-right">
+    <span class="badge-pill">{{ session.get('user_name','Usuário') }} - {{ session.get('company','Empresa') }}</span>
+    <a href="{{ url_for('logout') }}"><button class="btn black">Sair</button></a>
+  </div>
+</header>
+{%- endmacro %}
+
+{% macro chat() -%}
+<button class="chat-launcher" id="chatLauncher" aria-label="Abrir chat">
+  <img src="{{ url_for('static', filename='chat-icon.png') }}" alt="Chat">
+</button>
+<div class="chat-box" id="chatBox" role="dialog" aria-label="Chat de Suporte">
+  <div class="chat-header">Suporte CarbonTrack <span style="opacity:.7">• online</span></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Digite sua mensagem...">
+    <button id="chatSend">Enviar</button>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+{%- endmacro %}

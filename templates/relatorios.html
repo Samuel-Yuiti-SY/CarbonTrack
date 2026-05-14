@@ -1,0 +1,43 @@
+{% import 'partials/layout.html' as ui %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarbonTrack - Relatórios</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{{ ui.nav('relatorios') }}
+<main class="container">
+  <div class="card">
+    <h3 style="margin-top:0">Relatórios</h3>
+    <div class="grid cols-3">
+      <div>
+        <label class="small">Início</label>
+        <input class="input" placeholder="YYYY-MM-DD">
+      </div>
+      <div>
+        <label class="small">Fim</label>
+        <input class="input" placeholder="YYYY-MM-DD">
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:8px">
+        <button class="btn">Gerar</button>
+        <button class="btn black">Exportar PDF</button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <table class="table">
+      <thead><tr><th>Data</th><th>Empresa</th><th>Setor</th><th>Escopo</th><th>Fonte</th><th>Emissão (tCO₂e)</th></tr></thead>
+      <tbody>
+        <tr><td>2025-05-10</td><td>Empresa Teste</td><td>Produção</td><td>1</td><td>Diesel</td><td>0,55</td></tr>
+        <tr><td>2025-05-12</td><td>Empresa Teste</td><td>Logística</td><td>3</td><td>Frota</td><td>1,22</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+{{ ui.chat() }}
+</body>
+</html>

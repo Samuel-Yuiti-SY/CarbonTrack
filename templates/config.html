@@ -1,0 +1,33 @@
+{% import 'partials/layout.html' as ui %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarbonTrack - Configurações</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{{ ui.nav('config') }}
+<main class="container">
+  <div class="card">
+    <h3 style="margin-top:0">Configurações da Conta</h3>
+    <div class="grid cols-2">
+      <div>
+        <label class="small">Nome</label>
+        <input class="input" value="Samuel">
+      </div>
+      <div>
+        <label class="small">Empresa</label>
+        <input class="input" value="Empresa Teste">
+      </div>
+    </div>
+    <div style="margin-top:12px">
+      <button class="btn">Salvar</button>
+    </div>
+  </div>
+</main>
+{{ ui.chat() }}
+</body>
+</html>

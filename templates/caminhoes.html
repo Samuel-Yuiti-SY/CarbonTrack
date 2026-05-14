@@ -1,0 +1,28 @@
+{% import 'partials/layout.html' as ui %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarbonTrack - Caminhões</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{{ ui.nav('caminhoes') }}
+<main class="container">
+  <div class="card">
+    <h3 style="margin-top:0">Frota – Emissões</h3>
+    <table class="table">
+      <thead><tr><th>Placa</th><th>Modelo</th><th>Rota</th><th>KM</th><th>tCO₂e</th></tr></thead>
+      <tbody>
+        <tr><td>ABC-1234</td><td>Truck 8T</td><td>SP → RJ</td><td>420</td><td>1,15</td></tr>
+        <tr><td>XYZ-7788</td><td>Truck 6T</td><td>SP → BH</td><td>360</td><td>0,98</td></tr>
+        <tr><td>KLM-5522</td><td>VUC</td><td>SP → Campinas</td><td>120</td><td>0,41</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+{{ ui.chat() }}
+</body>
+</html>

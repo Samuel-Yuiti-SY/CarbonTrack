@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarbonTrack - Login</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="login-wrap">
+  <section class="login-left">
+    <div class="login-card">
+      <h1>Bem-vindo ao <b>CarbonTrack</b></h1>
+      <p class="muted">Plataforma de gestão e conciliação de emissões de CO₂.</p>
+      <form method="POST">
+        <label>Usuário</label><br>
+        <input class="input" type="text" name="usuario" placeholder="Digite seu usuário" required><br><br>
+        <label>Senha</label><br>
+        <input class="input" type="password" name="senha" placeholder="Digite sua senha" required><br><br>
+        <button class="btn" type="submit">Entrar</button>
+        {% if erro %}<p class="muted" style="color:#c0392b;margin-top:10px">{{ erro }}</p>{% endif %}
+        <p class="muted" style="margin-top:10px">Demo: usuário <b>teste</b> • senha <b>1234</b></p>
+      </form>
+    </div>
+  </section>
+  <section class="login-right">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="CarbonTrack" style="position:absolute; right:16px; top:12px; height:40px">
+    <img src="{{ url_for('static', filename='caminhoneiro.png') }}" class="hero" alt="Caminhoneiro">
+  </section>
+</div>
+<button class="chat-launcher" id="chatLauncher" aria-label="Abrir chat">
+  <img src="{{ url_for('static', filename='chat-icon.png') }}" alt="Chat">
+</button>
+<div class="chat-box" id="chatBox" role="dialog" aria-label="Chat de Suporte">
+  <div class="chat-header">Suporte CarbonTrack <span style="opacity:.7">• online</span></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Digite sua mensagem...">
+    <button id="chatSend">Enviar</button>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>

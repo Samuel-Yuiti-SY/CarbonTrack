@@ -1,0 +1,28 @@
+{% import 'partials/layout.html' as ui %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarbonTrack - Emissões</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{{ ui.nav('emissoes') }}
+<main class="container">
+  <div class="card">
+    <h3 style="margin-top:0">Emissões por fonte</h3>
+    <table class="table">
+      <thead><tr><th>Data</th><th>Máquina/Origem</th><th>Setor</th><th>Escopo</th><th>Emissão (tCO₂e)</th></tr></thead>
+      <tbody>
+        <tr><td>2025-06-01</td><td>Compressor A</td><td>Produção</td><td>1</td><td>0,92</td></tr>
+        <tr><td>2025-06-02</td><td>Gerador B</td><td>Energia</td><td>2</td><td>0,71</td></tr>
+        <tr><td>2025-06-03</td><td>Frota – ABC-1234</td><td>Logística</td><td>3</td><td>1,05</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+{{ ui.chat() }}
+</body>
+</html>
