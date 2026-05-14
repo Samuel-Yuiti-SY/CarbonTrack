@@ -226,8 +226,10 @@ function ChartPanel({
   children: React.ReactNode;
 }) {
   return (
-    <article className="rounded-2xl border border-yellow-400/25 bg-slate-950 p-5 shadow-xl shadow-slate-950/10">
-      <h2 className="mb-4 text-base font-semibold text-white">{title}</h2>
+    <article className="rounded-2xl border border-border bg-card p-5 shadow-sm dark:border-yellow-400/25 dark:bg-slate-950 dark:shadow-xl dark:shadow-slate-950/10">
+      <h2 className="mb-4 text-base font-semibold text-foreground dark:text-white">
+        {title}
+      </h2>
       {children}
     </article>
   );
@@ -235,7 +237,7 @@ function ChartPanel({
 
 function ChartSkeleton() {
   return (
-    <div className="grid h-72 w-full place-items-center rounded-2xl border border-dashed border-yellow-400/30 bg-slate-950">
+    <div className="grid h-72 w-full place-items-center rounded-2xl border border-dashed border-yellow-400/30 bg-card dark:bg-slate-950">
       <div className="h-2 w-28 rounded-full bg-yellow-300" />
     </div>
   );

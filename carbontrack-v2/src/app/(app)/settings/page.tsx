@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Building2, CheckCircle2, Globe2, Save } from "lucide-react";
 import { LanguageToggle } from "@/components/common/LanguageToggle";
 import { SectionHeader } from "@/components/common/SectionHeader";
+import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function SettingsPage() {
@@ -44,9 +45,7 @@ export default function SettingsPage() {
               <LanguageToggle />
             </PreferenceRow>
             <PreferenceRow label={t.common.theme}>
-              <span className="rounded-full bg-yellow-300 px-3 py-1 text-sm font-semibold text-slate-950">
-                CarbonTrack original
-              </span>
+              <ThemeToggle />
             </PreferenceRow>
             <Field label={t.settings.measureUnit} defaultValue="tCO2e" />
             <Field label={t.settings.monthlyGoal} defaultValue="980 tCO2e" />

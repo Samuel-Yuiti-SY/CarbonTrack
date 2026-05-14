@@ -12,6 +12,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { LanguageToggle } from "@/components/common/LanguageToggle";
+import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { useI18n } from "@/components/providers/I18nProvider";
 
 export default function Home() {
@@ -30,10 +31,13 @@ export default function Home() {
             priority
           />
         </Link>
-        <LanguageToggle />
+        <div className="flex items-center gap-2">
+          <LanguageToggle />
+          <ThemeToggle />
+        </div>
       </header>
 
-      <section className="relative border-y border-border bg-gradient-to-br from-yellow-200 via-white to-background">
+      <section className="relative border-y border-border bg-gradient-to-br from-yellow-200 via-white to-background dark:from-yellow-500/25 dark:via-card dark:to-background">
         <div className="absolute inset-0 subtle-grid opacity-50" aria-hidden />
         <DashboardPreview />
 
@@ -95,7 +99,7 @@ function DashboardPreview() {
 
   return (
     <div
-      className="pointer-events-none absolute inset-y-6 right-[-8rem] z-0 hidden w-[48rem] rotate-[-2deg] rounded-[2rem] border border-border bg-white/88 p-5 opacity-95 shadow-2xl backdrop-blur-xl lg:block"
+      className="pointer-events-none absolute inset-y-6 right-[-8rem] z-0 hidden w-[48rem] rotate-[-2deg] rounded-[2rem] border border-border bg-card/88 p-5 opacity-95 shadow-2xl backdrop-blur-xl lg:block"
       aria-hidden
     >
       <div className="flex items-center justify-between border-b border-border pb-4">
@@ -129,7 +133,7 @@ function DashboardPreview() {
                   key={item.label}
                   className="rounded-2xl border border-border bg-background/80 p-4"
                 >
-                  <Icon className="text-slate-950" size={19} aria-hidden />
+                  <Icon className="text-yellow-600 dark:text-yellow-300" size={19} aria-hidden />
                   <strong className="mt-4 block text-2xl text-foreground">
                     {item.value}
                   </strong>
@@ -153,7 +157,7 @@ function DashboardPreview() {
             {[68, 62, 58, 52, 49, 44, 38].map((height, index) => (
               <span
                 key={height + index}
-                className="flex-1 rounded-t-xl bg-gradient-to-t from-slate-950 to-yellow-400"
+                className="flex-1 rounded-t-xl bg-gradient-to-t from-yellow-500 to-yellow-300"
                 style={{ height: `${height}%` }}
               />
             ))}
@@ -166,7 +170,7 @@ function DashboardPreview() {
               className="rounded-2xl border border-border bg-background/80 p-4"
             >
               <Icon className="text-yellow-600" size={18} aria-hidden />
-              <div className="mt-3 h-2 rounded-full bg-slate-200">
+              <div className="mt-3 h-2 rounded-full bg-slate-200 dark:bg-white/15">
                 <div
                   className="h-2 rounded-full bg-yellow-400"
                   style={{ width: `${86 - index * 18}%` }}

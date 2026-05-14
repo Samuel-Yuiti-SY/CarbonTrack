@@ -7,11 +7,18 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+import { useTheme } from "next-themes";
 import { scopeDistribution } from "@/data/dashboard";
 
-const colors = ["#FFD700", "#FFE169", "#FFFFFF"];
-
 export function ScopeDonutChart() {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
+  const colors = isDark
+    ? ["#FFD700", "#FFE169", "#FFFFFF"]
+    : ["#FFD700", "#F4B400", "#9CA3AF"];
+  const tooltipBackground = isDark ? "rgba(17, 17, 17, 0.95)" : "rgba(255, 255, 255, 0.98)";
+  const tooltipText = isDark ? "#ffffff" : "#374151";
+
   return (
     <div className="grid gap-4 md:grid-cols-[1fr_160px] md:items-center">
       <div className="h-72 w-full">
@@ -33,11 +40,11 @@ export function ScopeDonutChart() {
               contentStyle={{
                 borderRadius: 14,
                 border: "1px solid rgba(255, 215, 0, 0.35)",
-                background: "rgba(17, 17, 17, 0.95)",
-                color: "#f8fafc",
+                background: tooltipBackground,
+                color: tooltipText,
               }}
-              labelStyle={{ color: "#ffffff" }}
-              itemStyle={{ color: "#ffffff" }}
+              labelStyle={{ color: tooltipText }}
+              itemStyle={{ color: tooltipText }}
             />
           </PieChart>
         </ResponsiveContainer>
@@ -46,16 +53,16 @@ export function ScopeDonutChart() {
         {scopeDistribution.map((item, index) => (
           <div
             key={item.scope}
-            className="flex items-center justify-between gap-3 rounded-xl border border-white/15 bg-white/10 px-3 py-2 text-sm"
+            className="flex items-center justify-between gap-3 rounded-xl border border-border bg-yellow-50 px-3 py-2 text-sm dark:border-white/15 dark:bg-white/10"
           >
-            <span className="flex items-center gap-2 text-white">
+            <span className="flex items-center gap-2 text-muted dark:text-white">
               <span
                 className="h-2.5 w-2.5 rounded-full"
                 style={{ backgroundColor: colors[index % colors.length] }}
               />
               {item.scope}
             </span>
-            <strong className="text-white">{item.value}%</strong>
+            <strong className="text-foreground dark:text-white">{item.value}%</strong>
           </div>
         ))}
       </div>
