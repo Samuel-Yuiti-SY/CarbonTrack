@@ -10,8 +10,8 @@ import { emissions, type EmissionRecord, type EmissionStatus } from "@/data/emis
 import { formatDate, formatNumber } from "@/lib/format";
 import type { Messages } from "@/messages";
 
-const statusTone: Record<EmissionStatus, "emerald" | "amber" | "rose"> = {
-  onTrack: "emerald",
+const statusTone: Record<EmissionStatus, "yellow" | "amber" | "rose"> = {
+  onTrack: "yellow",
   attention: "amber",
   critical: "rose",
 };

@@ -6,7 +6,7 @@ This application uses fictional local data only. It does not include real authen
 
 ## Objective
 
-The goal of CarbonTrack v2 is to present a professional product demo with a modern SaaS interface, responsive layouts, bilingual content, light/dark theme support, and deployment-ready architecture for Vercel.
+The goal of CarbonTrack v2 is to present a professional product demo with a modern SaaS interface, responsive layouts, bilingual content, the original CarbonTrack visual identity, and deployment-ready architecture for Vercel.
 
 ## Tech Stack
 
@@ -16,7 +16,6 @@ The goal of CarbonTrack v2 is to present a professional product demo with a mode
 - Tailwind CSS
 - Recharts
 - lucide-react
-- next-themes
 - ESLint
 
 ## Features
@@ -29,7 +28,7 @@ The goal of CarbonTrack v2 is to present a professional product demo with a mode
 - Settings page with company data and local preferences
 - About page focused on portfolio storytelling
 - Floating support chat with mocked PT/EN replies
-- Light/dark theme toggle with persisted preference
+- Original CarbonTrack yellow, black, and light-gray visual identity
 - PT/EN language toggle with persisted preference
 
 ## Routes

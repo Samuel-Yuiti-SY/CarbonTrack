@@ -9,8 +9,8 @@ import { fleet, type FleetStatus, type FleetVehicle } from "@/data/fleet";
 import { formatNumber } from "@/lib/format";
 import type { Messages } from "@/messages";
 
-const fleetTone: Record<FleetStatus, "emerald" | "amber" | "rose"> = {
-  efficient: "emerald",
+const fleetTone: Record<FleetStatus, "yellow" | "amber" | "rose"> = {
+  efficient: "yellow",
   attention: "amber",
   critical: "rose",
 };
@@ -74,7 +74,7 @@ export default function FleetPage() {
               }`}
             >
               <div className="flex items-start justify-between gap-4">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-emerald-500/16 to-cyan-500/16 text-emerald-700 dark:text-emerald-200">
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-yellow-300/45 text-slate-950">
                   <Truck size={22} aria-hidden />
                 </span>
                 <StatusBadge
@@ -97,7 +97,7 @@ export default function FleetPage() {
                   {formatNumber(vehicle.emission, locale, 1)} tCO2e
                 </p>
                 {highEmission ? (
-                  <p className="flex items-center gap-2 rounded-xl bg-rose-500/10 px-3 py-2 text-rose-700 dark:text-rose-200">
+                  <p className="flex items-center gap-2 rounded-xl bg-rose-500/10 px-3 py-2 text-rose-700">
                     <AlertTriangle size={16} aria-hidden />
                     {t.fleet.highEmission}
                   </p>

@@ -27,7 +27,7 @@ export function SectorBarChart() {
           <XAxis dataKey="sector" tickLine={false} axisLine={false} />
           <YAxis tickLine={false} axisLine={false} />
           <Tooltip
-            cursor={{ fill: "rgba(20, 184, 166, 0.08)" }}
+            cursor={{ fill: "rgba(255, 215, 0, 0.12)" }}
             contentStyle={{
               borderRadius: 14,
               border: "1px solid rgba(148, 163, 184, 0.25)",
@@ -35,7 +35,7 @@ export function SectorBarChart() {
               color: "#f8fafc",
             }}
           />
-          <Bar dataKey="emissions" fill="#06b6d4" radius={[10, 10, 0, 0]} />
+          <Bar dataKey="emissions" fill="#111111" radius={[10, 10, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>

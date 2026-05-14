@@ -6,15 +6,14 @@ type KpiCardProps = {
   detail: string;
   trend?: string;
   icon: LucideIcon;
-  tone?: "emerald" | "cyan" | "blue" | "slate" | "rose";
+  tone?: "yellow" | "black" | "slate" | "rose";
 };
 
 const toneClasses = {
-  emerald: "from-emerald-500/18 text-emerald-700 dark:text-emerald-200",
-  cyan: "from-cyan-500/18 text-cyan-700 dark:text-cyan-200",
-  blue: "from-blue-500/18 text-blue-700 dark:text-blue-200",
-  slate: "from-slate-500/14 text-slate-700 dark:text-slate-200",
-  rose: "from-rose-500/16 text-rose-700 dark:text-rose-200",
+  yellow: "from-yellow-400/40 text-slate-950",
+  black: "from-slate-950/12 text-slate-950",
+  slate: "from-slate-500/14 text-slate-700",
+  rose: "from-rose-500/16 text-rose-700",
 };
 
 export function KpiCard({
@@ -23,7 +22,7 @@ export function KpiCard({
   detail,
   trend,
   icon: Icon,
-  tone = "emerald",
+  tone = "yellow",
 }: KpiCardProps) {
   return (
     <article className="glass-panel rounded-2xl p-5">
@@ -43,7 +42,7 @@ export function KpiCard({
       <div className="mt-4 flex items-center justify-between gap-3 text-sm">
         <span className="text-muted">{detail}</span>
         {trend ? (
-          <span className="rounded-full bg-emerald-500/12 px-2.5 py-1 font-medium text-emerald-700 dark:text-emerald-200">
+          <span className="rounded-full bg-yellow-200 px-2.5 py-1 font-medium text-slate-950">
             {trend}
           </span>
         ) : null}

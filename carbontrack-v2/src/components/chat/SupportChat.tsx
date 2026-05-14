@@ -1,6 +1,7 @@
 "use client";
 
-import { MessageCircle, Send, X } from "lucide-react";
+import Image from "next/image";
+import { Send, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/components/providers/I18nProvider";
 
@@ -55,8 +56,14 @@ export function SupportChat() {
         <section className="glass-panel flex h-[30rem] w-[calc(100vw-2.5rem)] max-w-sm flex-col overflow-hidden rounded-2xl">
           <header className="flex items-center justify-between border-b border-border px-4 py-3">
             <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-emerald-500/15 text-emerald-700 dark:text-emerald-200">
-                <MessageCircle size={18} aria-hidden />
+              <span className="grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-yellow-300">
+                <Image
+                  src="/chat-icon.png"
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="h-8 w-8 object-cover"
+                />
               </span>
               <div>
                 <h2 className="text-sm font-semibold text-foreground">
@@ -87,8 +94,8 @@ export function SupportChat() {
                 <p
                   className={`max-w-[82%] rounded-2xl px-3 py-2 text-sm leading-6 ${
                     message.role === "user"
-                      ? "bg-cyan-500 text-white"
-                      : "bg-slate-100 text-foreground dark:bg-white/10"
+                      ? "bg-slate-950 text-white"
+                      : "bg-yellow-100 text-foreground"
                   }`}
                 >
                   {message.text}
@@ -112,7 +119,7 @@ export function SupportChat() {
             />
             <button
               type="submit"
-              className="grid h-10 w-10 place-items-center rounded-full bg-emerald-500 text-slate-950 transition hover:bg-emerald-400"
+              className="grid h-10 w-10 place-items-center rounded-full bg-slate-950 text-white transition hover:bg-slate-800"
               aria-label={t.chat.send}
             >
               <Send size={16} aria-hidden />
@@ -124,11 +131,21 @@ export function SupportChat() {
       <button
         type="button"
         onClick={() => setOpen((currentOpen) => !currentOpen)}
-        className="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 text-slate-950 shadow-xl shadow-emerald-950/20 transition hover:scale-105"
+        className="grid h-16 w-16 place-items-center overflow-hidden rounded-full bg-yellow-400 text-slate-950 shadow-xl shadow-yellow-700/25 transition hover:scale-105"
         aria-label={open ? t.chat.close : t.chat.open}
         title={open ? t.chat.close : t.chat.open}
       >
-        {open ? <X size={22} aria-hidden /> : <MessageCircle size={22} aria-hidden />}
+        {open ? (
+          <X size={22} aria-hidden />
+        ) : (
+          <Image
+            src="/chat-icon.png"
+            alt=""
+            width={64}
+            height={64}
+            className="h-14 w-14 object-cover"
+          />
+        )}
       </button>
     </div>
   );

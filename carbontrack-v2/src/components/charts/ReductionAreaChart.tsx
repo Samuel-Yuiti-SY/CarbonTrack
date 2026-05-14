@@ -25,8 +25,8 @@ export function ReductionAreaChart() {
         <AreaChart data={data} margin={{ left: -18, right: 8, top: 10 }}>
           <defs>
             <linearGradient id="reductionGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#10b981" stopOpacity={0.38} />
-              <stop offset="95%" stopColor="#10b981" stopOpacity={0.02} />
+              <stop offset="5%" stopColor="#FFD700" stopOpacity={0.55} />
+              <stop offset="95%" stopColor="#FFD700" stopOpacity={0.04} />
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.22)" />
@@ -43,7 +43,7 @@ export function ReductionAreaChart() {
           <Area
             type="monotone"
             dataKey="reduction"
-            stroke="#10b981"
+            stroke="#111111"
             strokeWidth={3}
             fill="url(#reductionGradient)"
           />

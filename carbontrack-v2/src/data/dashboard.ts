@@ -94,7 +94,7 @@ export const recentAlerts = [
   {
     title: { pt: "Redução validada", en: "Reduction validated" },
     detail: { pt: "Energia renovável compensada", en: "Renewable energy accounted" },
-    tone: "emerald",
+    tone: "yellow",
   },
 ] as const;
 

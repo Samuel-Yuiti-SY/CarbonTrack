@@ -13,7 +13,7 @@ export function LanguageToggle() {
     <button
       type="button"
       onClick={() => setLocale(nextLocale)}
-      className="inline-flex h-10 items-center gap-2 rounded-full border border-border bg-card px-3 text-sm font-medium text-foreground shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 dark:hover:border-emerald-500 dark:hover:text-emerald-200"
+      className="inline-flex h-10 items-center gap-2 rounded-full border border-border bg-card px-3 text-sm font-medium text-foreground shadow-sm transition hover:border-yellow-400 hover:bg-yellow-50"
       aria-label={`${t.common.language}: ${nextLocale.toUpperCase()}`}
       title={`${t.common.language}: ${nextLocale.toUpperCase()}`}
     >

@@ -30,8 +30,8 @@ export default function ReportsPage() {
         <span
           className={
             row.variation.startsWith("+")
-              ? "font-semibold text-rose-600 dark:text-rose-200"
-              : "font-semibold text-emerald-600 dark:text-emerald-200"
+              ? "font-semibold text-rose-600"
+              : "font-semibold text-slate-950"
           }
         >
           {row.variation}
@@ -48,7 +48,7 @@ export default function ReportsPage() {
         subtitle={t.reports.subtitle}
         action={
           <div className="flex flex-col gap-2 sm:flex-row">
-            <button className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-500 px-5 text-sm font-semibold text-slate-950">
+            <button className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-yellow-400 px-5 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300">
               <Play size={16} aria-hidden />
               {t.common.generate}
             </button>
@@ -79,7 +79,7 @@ export default function ReportsPage() {
           value={`${formatNumber(executiveSummary.total, locale)} tCO2e`}
           detail={reportPeriods[0].label[locale]}
           icon={FileText}
-          tone="cyan"
+          tone="yellow"
         />
         <KpiCard
           title={t.reports.reduction}
@@ -87,7 +87,7 @@ export default function ReportsPage() {
           detail={t.common.onTrack}
           trend="-16.2%"
           icon={TrendingDown}
-          tone="emerald"
+          tone="black"
         />
         <article className="rounded-2xl border border-border bg-card p-5 shadow-sm md:col-span-2">
           <h2 className="text-base font-semibold">{t.reports.executive}</h2>

@@ -30,7 +30,7 @@ export function DataTable<T>({
     <div className="overflow-hidden rounded-2xl border border-border bg-card">
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse text-sm">
-          <thead className="bg-slate-100/70 text-xs uppercase tracking-[0.12em] text-muted dark:bg-white/5">
+          <thead className="bg-yellow-50 text-xs uppercase tracking-[0.12em] text-muted">
             <tr>
               {columns.map((column) => (
                 <th
@@ -46,7 +46,7 @@ export function DataTable<T>({
             {data.map((row) => (
               <tr
                 key={getRowKey(row)}
-                className="transition hover:bg-slate-100/70 dark:hover:bg-white/5"
+                className="transition hover:bg-yellow-50"
               >
                 {columns.map((column) => (
                   <td

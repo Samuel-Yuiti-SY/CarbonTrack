@@ -9,7 +9,7 @@ import {
 } from "recharts";
 import { scopeDistribution } from "@/data/dashboard";
 
-const colors = ["#10b981", "#06b6d4", "#3b82f6"];
+const colors = ["#FFD700", "#111111", "#B8B8B8"];
 
 export function ScopeDonutChart() {
   return (
@@ -44,7 +44,7 @@ export function ScopeDonutChart() {
         {scopeDistribution.map((item, index) => (
           <div
             key={item.scope}
-            className="flex items-center justify-between gap-3 rounded-xl border border-border bg-slate-100/70 px-3 py-2 text-sm dark:bg-white/5"
+            className="flex items-center justify-between gap-3 rounded-xl border border-border bg-yellow-50 px-3 py-2 text-sm"
           >
             <span className="flex items-center gap-2 text-muted">
               <span

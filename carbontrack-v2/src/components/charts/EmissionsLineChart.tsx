@@ -38,7 +38,7 @@ export function EmissionsLineChart() {
           <Line
             type="monotone"
             dataKey="target"
-            stroke="#38bdf8"
+            stroke="#111111"
             strokeDasharray="4 4"
             strokeWidth={2}
             dot={false}
@@ -46,9 +46,9 @@ export function EmissionsLineChart() {
           <Line
             type="monotone"
             dataKey="emissions"
-            stroke="#10b981"
+            stroke="#FFD700"
             strokeWidth={3}
-            dot={{ r: 4, fill: "#10b981", strokeWidth: 0 }}
+            dot={{ r: 4, fill: "#FFD700", strokeWidth: 0 }}
           />
         </LineChart>
       </ResponsiveContainer>

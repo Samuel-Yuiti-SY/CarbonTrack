@@ -36,7 +36,7 @@ export default function AboutPage() {
 
       <section className="glass-panel rounded-2xl p-6">
         <div className="flex items-start gap-4">
-          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-emerald-500/18 to-cyan-500/18 text-emerald-700 dark:text-emerald-200">
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-yellow-300/45 text-slate-950">
             <Brain size={22} aria-hidden />
           </span>
           <div>
@@ -62,7 +62,7 @@ function InfoPanel({
 }) {
   return (
     <article className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-      <Icon className="text-emerald-500" size={24} aria-hidden />
+      <Icon className="text-yellow-500" size={24} aria-hidden />
       <h2 className="mt-5 text-xl font-semibold">{title}</h2>
       <p className="mt-3 leading-7 text-muted">{children}</p>
     </article>
@@ -80,13 +80,13 @@ function ListPanel({
 }) {
   return (
     <article className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-      <Icon className="text-cyan-500" size={24} aria-hidden />
+      <Icon className="text-yellow-500" size={24} aria-hidden />
       <h2 className="mt-5 text-xl font-semibold">{title}</h2>
       <ul className="mt-4 space-y-3 text-sm leading-6 text-muted">
         {items.map((item) => (
           <li key={item} className="flex gap-2">
             <CheckCircle2
-              className="mt-0.5 shrink-0 text-emerald-500"
+              className="mt-0.5 shrink-0 text-yellow-500"
               size={16}
               aria-hidden
             />

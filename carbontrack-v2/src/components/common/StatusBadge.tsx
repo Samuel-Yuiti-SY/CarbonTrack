@@ -1,17 +1,14 @@
 type StatusBadgeProps = {
   label: string;
-  tone?: "emerald" | "cyan" | "amber" | "rose" | "slate";
+  tone?: "yellow" | "black" | "amber" | "rose" | "slate";
 };
 
 const toneClasses = {
-  emerald:
-    "border-emerald-500/25 bg-emerald-500/12 text-emerald-700 dark:text-emerald-200",
-  cyan: "border-cyan-500/25 bg-cyan-500/12 text-cyan-700 dark:text-cyan-200",
-  amber:
-    "border-amber-500/25 bg-amber-500/12 text-amber-700 dark:text-amber-200",
-  rose: "border-rose-500/25 bg-rose-500/12 text-rose-700 dark:text-rose-200",
-  slate:
-    "border-slate-500/20 bg-slate-500/10 text-slate-700 dark:text-slate-200",
+  yellow: "border-yellow-500/40 bg-yellow-200 text-slate-950",
+  black: "border-slate-950 bg-slate-950 text-white",
+  amber: "border-amber-500/25 bg-amber-500/12 text-amber-700",
+  rose: "border-rose-500/25 bg-rose-500/12 text-rose-700",
+  slate: "border-slate-500/20 bg-slate-500/10 text-slate-700",
 };
 
 export function StatusBadge({ label, tone = "slate" }: StatusBadgeProps) {

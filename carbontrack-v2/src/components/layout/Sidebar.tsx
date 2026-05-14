@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -43,15 +44,15 @@ export function Sidebar({ open, onClose }: SidebarProps) {
       >
         <div className="flex items-center justify-between gap-3 px-2">
           <Link href="/" className="flex items-center gap-3" onClick={onClose}>
-            <span className="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-500 text-sm font-black text-slate-950">
-              CT
-            </span>
-            <span>
-              <span className="block text-base font-semibold text-foreground">
-                {t.common.product}
-              </span>
-              <span className="block text-xs text-muted">v2 SaaS demo</span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt="CarbonTrack"
+              width={142}
+              height={60}
+              className="h-11 w-auto"
+              priority
+            />
+            <span className="sr-only">{t.common.product}</span>
           </Link>
           <button
             type="button"
@@ -75,8 +76,8 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                 onClick={onClose}
                 className={`flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition ${
                   active
-                    ? "bg-gradient-to-r from-emerald-500/18 to-cyan-500/18 text-foreground ring-1 ring-emerald-500/20"
-                    : "text-muted hover:bg-slate-100 hover:text-foreground dark:hover:bg-white/5"
+                    ? "bg-yellow-300/45 text-foreground ring-1 ring-yellow-400"
+                    : "text-muted hover:bg-yellow-100 hover:text-foreground"
                 }`}
               >
                 <Icon size={18} aria-hidden />
@@ -86,10 +87,10 @@ export function Sidebar({ open, onClose }: SidebarProps) {
           })}
         </nav>
 
-        <div className="rounded-2xl border border-border bg-slate-100/70 p-4 text-sm dark:bg-white/5">
+        <div className="rounded-2xl border border-border bg-yellow-50 p-4 text-sm">
           <p className="font-semibold text-foreground">{t.common.demoBadge}</p>
           <p className="mt-2 leading-6 text-muted">
-            {t.common.updated} · Vercel ready
+            {t.common.updated} - Vercel ready
           </p>
         </div>
       </aside>

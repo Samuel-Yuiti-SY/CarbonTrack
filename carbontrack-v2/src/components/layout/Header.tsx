@@ -3,7 +3,6 @@
 import { Menu, Search } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { LanguageToggle } from "@/components/common/LanguageToggle";
-import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { useI18n } from "@/components/providers/I18nProvider";
 import type { Messages } from "@/messages";
 
@@ -26,7 +25,7 @@ export function Header({ onMenuClick }: HeaderProps) {
   const activeKey = routeKeys[pathname] ?? "dashboard";
 
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-background/82 backdrop-blur-xl">
+    <header className="sticky top-0 z-30 border-b border-border bg-white/90 backdrop-blur-xl">
       <div className="flex min-h-16 items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex min-w-0 items-center gap-3">
           <button
@@ -38,7 +37,7 @@ export function Header({ onMenuClick }: HeaderProps) {
             <Menu size={18} aria-hidden />
           </button>
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-300">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-yellow-600">
               {t.common.version}
             </p>
             <p className="truncate text-sm text-muted">{t.nav[activeKey]}</p>
@@ -62,7 +61,6 @@ export function Header({ onMenuClick }: HeaderProps) {
 
         <div className="flex shrink-0 items-center gap-2">
           <LanguageToggle />
-          <ThemeToggle />
         </div>
       </div>
     </header>

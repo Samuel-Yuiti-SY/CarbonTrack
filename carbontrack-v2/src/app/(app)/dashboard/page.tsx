@@ -65,7 +65,7 @@ export default function DashboardPage() {
       detail: dashboardKpis.monthlyEmissions.detail[locale],
       trend: dashboardKpis.monthlyEmissions.trend,
       icon: Leaf,
-      tone: "emerald" as const,
+      tone: "yellow" as const,
     },
     {
       title: t.dashboard.kpis.reduction,
@@ -73,14 +73,14 @@ export default function DashboardPage() {
       detail: dashboardKpis.reduction.detail[locale],
       trend: dashboardKpis.reduction.trend,
       icon: TrendingDown,
-      tone: "cyan" as const,
+      tone: "black" as const,
     },
     {
       title: t.dashboard.kpis.quarterlyGoal,
       value: dashboardKpis.quarterlyGoal.value,
       detail: dashboardKpis.quarterlyGoal.detail[locale],
       icon: Target,
-      tone: "blue" as const,
+      tone: "yellow" as const,
     },
     {
       title: t.dashboard.kpis.vehicles,
@@ -94,7 +94,7 @@ export default function DashboardPage() {
       value: formatCurrency(dashboardKpis.cost.value, locale),
       detail: dashboardKpis.cost.detail[locale],
       icon: BadgeDollarSign,
-      tone: "cyan" as const,
+      tone: "yellow" as const,
     },
     {
       title: t.dashboard.kpis.alerts,
@@ -136,7 +136,7 @@ export default function DashboardPage() {
             {topEmitters.map((item) => (
               <div
                 key={item.name[locale]}
-                className="rounded-xl border border-border bg-slate-100/70 p-3 dark:bg-white/5"
+                className="rounded-xl border border-border bg-yellow-50 p-3"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
@@ -147,7 +147,7 @@ export default function DashboardPage() {
                       {item.detail[locale]}
                     </p>
                   </div>
-                  <strong className="text-sm text-cyan-600 dark:text-cyan-200">
+                  <strong className="text-sm text-slate-950">
                     {formatNumber(item.value, locale, 1)}
                   </strong>
                 </div>
@@ -161,7 +161,7 @@ export default function DashboardPage() {
             {recentAlerts.map((alert) => (
               <div
                 key={alert.title[locale]}
-                className="rounded-xl border border-border bg-slate-100/70 p-3 dark:bg-white/5"
+                className="rounded-xl border border-border bg-yellow-50 p-3"
               >
                 <p className="font-medium text-foreground">
                   {alert.title[locale]}
@@ -177,12 +177,12 @@ export default function DashboardPage() {
             {recommendations.map((recommendation) => (
               <div
                 key={recommendation.title[locale]}
-                className="rounded-xl border border-border bg-slate-100/70 p-3 dark:bg-white/5"
+                className="rounded-xl border border-border bg-yellow-50 p-3"
               >
                 <p className="font-medium text-foreground">
                   {recommendation.title[locale]}
                 </p>
-                <p className="mt-1 text-xs font-semibold text-emerald-700 dark:text-emerald-200">
+                <p className="mt-1 text-xs font-semibold text-slate-950">
                   {recommendation.impact[locale]}
                 </p>
               </div>
@@ -193,17 +193,17 @@ export default function DashboardPage() {
         <SidePanel title={t.dashboard.side.esg}>
           <div className="space-y-5">
             <div className="flex items-center justify-between">
-              <StatusBadge label={t.common.onTrack} tone="emerald" />
-              <Gauge className="text-emerald-500" size={22} aria-hidden />
+              <StatusBadge label={t.common.onTrack} tone="yellow" />
+              <Gauge className="text-yellow-500" size={22} aria-hidden />
             </div>
             <div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted">{esgGoal.title[locale]}</span>
                 <strong>{esgGoal.progress}%</strong>
               </div>
-              <div className="mt-3 h-3 rounded-full bg-slate-200 dark:bg-white/10">
+              <div className="mt-3 h-3 rounded-full bg-slate-200">
                 <div
-                  className="h-3 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400"
+                  className="h-3 rounded-full bg-gradient-to-r from-yellow-400 to-slate-950"
                   style={{ width: `${esgGoal.progress}%` }}
                 />
               </div>
@@ -235,8 +235,8 @@ function ChartPanel({
 
 function ChartSkeleton() {
   return (
-    <div className="grid h-72 w-full place-items-center rounded-2xl border border-dashed border-border bg-slate-100/50 dark:bg-white/5">
-      <div className="h-2 w-28 rounded-full bg-slate-300 dark:bg-white/15" />
+    <div className="grid h-72 w-full place-items-center rounded-2xl border border-dashed border-border bg-yellow-50">
+      <div className="h-2 w-28 rounded-full bg-yellow-300" />
     </div>
   );
 }
