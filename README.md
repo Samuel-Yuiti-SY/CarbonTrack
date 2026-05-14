@@ -1,21 +1,74 @@
 # CarbonTrack - Demo (flask - python)
 
-CarbonTrack e uma demo simples feita em Flask para simular um painel de acompanhamento ambiental. A ideia do projeto e mostrar, de forma visual, como uma empresa poderia acompanhar emissoes, frota, relatorios e configuracoes em um sistema web.
+Demo web para simular um painel de acompanhamento ambiental, com foco em emissoes de CO2, indicadores, relatorios e gestao de frota.
 
-Este projeto nasceu como estudo pratico de Python, Flask, HTML, CSS e organizacao de telas. Ele nao usa banco de dados real nem autenticacao de producao; tudo foi montado para demonstracao e aprendizado.
+O projeto foi criado como estudo pratico de Python, Flask, HTML, CSS e organizacao de telas. A proposta e mostrar, de forma simples e visual, como uma empresa poderia acompanhar dados ambientais em um sistema interno.
 
-## Na demo possuímos:
+A demo original esta em Flask. Dentro da pasta `carbontrack-v2` existe uma versao mais nova feita em Next.js, publicada na Vercel com visual atualizado e identidade visual baseada na logo do projeto.
+
+## Acesse o site
+
+Producao na Vercel:
+
+https://carbontrack-v2-theta.vercel.app
+
+## Versao
+
+Versao atual: 1.0.0
+
+## Funcionalidades
 
 - Tela de login demonstrativa
-- Dashboard com indicadores
+- Dashboard com indicadores ambientais
 - Pagina de emissoes
 - Pagina de relatorios
 - Pagina de caminhoes
 - Pagina de configuracoes
 - Chat visual simples
-- Layout com navbar e identidade visual propria
+- Layout com navbar
+- Logo e identidade visual propria
+- Dados ficticios para demonstracao
 
-## Como rodar
+## Tecnologias
+
+- Python
+- Flask
+- HTML
+- CSS
+- JavaScript
+- Next.js na versao `carbontrack-v2`
+- React
+- TypeScript
+- Tailwind CSS
+- Deploy na Vercel
+
+## Como usar
+
+Na versao publicada na Vercel:
+
+1. Acesse o site.
+2. Clique em Acessar demo.
+3. Navegue pelas paginas de dashboard, emissoes, frota, relatorios, configuracoes e sobre o projeto.
+
+Na versao Flask local:
+
+1. Rode o projeto localmente.
+2. Acesse `http://localhost:5000`.
+3. Use o login demonstrativo.
+
+Login da demo:
+
+```txt
+usuario: teste
+senha: 1234
+```
+
+## Como rodar localmente
+
+Requisitos:
+
+- Python 3
+- pip
 
 Crie e ative um ambiente virtual:
 
@@ -41,23 +94,16 @@ Instale o Flask:
 pip install flask
 ```
 
-Rode o projeto:
+Inicie o projeto:
 
 ```bash
 python app.py
 ```
 
-Acesse no navegador:
+Acesse:
 
 ```txt
 http://localhost:5000
-```
-
-Login da demo:
-
-```txt
-usuario: teste
-senha: 1234
 ```
 
 ## Estrutura principal
@@ -65,11 +111,49 @@ senha: 1234
 ```txt
 app.py
 templates/
+  login.html
+  dashboard.html
+  emissoes.html
+  relatorios.html
+  caminhoes.html
+  config.html
+  partials/
 static/
+  style.css
+  chat.js
+  logo.png
+  caminhoneiro.png
+  chat-icon.png
+carbontrack-v2/
+```
+
+## Versao v2
+
+A pasta `carbontrack-v2` contem uma versao mais moderna do CarbonTrack, criada com Next.js, React, TypeScript e Tailwind CSS.
+
+Essa versao foi preparada para deploy na Vercel e usa dados ficticios para demonstrar um produto SaaS de monitoramento ambiental.
+
+## Deploy
+
+O projeto `carbontrack-v2` esta pronto para deploy na Vercel.
+
+Configuracoes recomendadas:
+
+```txt
+Framework Preset: Next.js
+Root Directory: carbontrack-v2
+Build Command: npm run build
+Output Directory: .next
 ```
 
 ## Observacao
 
-Esta versao em Flask foi mantida como demo original do projeto. Dentro da pasta `carbontrack-v2` existe uma versao mais nova feita em Next.js, preparada para deploy na Vercel.
+Este projeto e demonstrativo. Nenhum dado real de empresa, frota, usuario ou emissao e utilizado.
 
-Link da versao v2 na Vercel: https://carbontrack-v2-theta.vercel.app
+## Creditos
+
+Projeto criado por: Samuel Yuiti
+
+E-mail: samuelyuit@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/samuelyuiti/
