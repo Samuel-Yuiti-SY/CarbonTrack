@@ -71,3 +71,5 @@ static/
 ## Observacao
 
 Esta versao em Flask foi mantida como demo original do projeto. Dentro da pasta `carbontrack-v2` existe uma versao mais nova feita em Next.js, preparada para deploy na Vercel.
+
+Link da versao v2 na Vercel: https://carbontrack-v2-theta.vercel.app
