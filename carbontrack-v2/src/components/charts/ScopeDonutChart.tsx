@@ -9,7 +9,7 @@ import {
 } from "recharts";
 import { scopeDistribution } from "@/data/dashboard";
 
-const colors = ["#FFD700", "#111111", "#B8B8B8"];
+const colors = ["#FFD700", "#FFE169", "#FFFFFF"];
 
 export function ScopeDonutChart() {
   return (
@@ -32,10 +32,12 @@ export function ScopeDonutChart() {
             <Tooltip
               contentStyle={{
                 borderRadius: 14,
-                border: "1px solid rgba(148, 163, 184, 0.25)",
-                background: "rgba(15, 23, 42, 0.92)",
+                border: "1px solid rgba(255, 215, 0, 0.35)",
+                background: "rgba(17, 17, 17, 0.95)",
                 color: "#f8fafc",
               }}
+              labelStyle={{ color: "#ffffff" }}
+              itemStyle={{ color: "#ffffff" }}
             />
           </PieChart>
         </ResponsiveContainer>
@@ -44,16 +46,16 @@ export function ScopeDonutChart() {
         {scopeDistribution.map((item, index) => (
           <div
             key={item.scope}
-            className="flex items-center justify-between gap-3 rounded-xl border border-border bg-yellow-50 px-3 py-2 text-sm"
+            className="flex items-center justify-between gap-3 rounded-xl border border-white/15 bg-white/10 px-3 py-2 text-sm"
           >
-            <span className="flex items-center gap-2 text-muted">
+            <span className="flex items-center gap-2 text-white">
               <span
                 className="h-2.5 w-2.5 rounded-full"
                 style={{ backgroundColor: colors[index % colors.length] }}
               />
               {item.scope}
             </span>
-            <strong className="text-foreground">{item.value}%</strong>
+            <strong className="text-white">{item.value}%</strong>
           </div>
         ))}
       </div>

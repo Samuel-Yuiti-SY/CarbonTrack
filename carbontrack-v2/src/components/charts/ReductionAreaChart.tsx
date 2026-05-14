@@ -29,21 +29,33 @@ export function ReductionAreaChart() {
               <stop offset="95%" stopColor="#FFD700" stopOpacity={0.04} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.22)" />
-          <XAxis dataKey="month" tickLine={false} axisLine={false} />
-          <YAxis tickLine={false} axisLine={false} unit="%" />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.18)" />
+          <XAxis
+            dataKey="month"
+            tickLine={false}
+            axisLine={false}
+            tick={{ fill: "#ffffff", fontSize: 12 }}
+          />
+          <YAxis
+            tickLine={false}
+            axisLine={false}
+            unit="%"
+            tick={{ fill: "#ffffff", fontSize: 12 }}
+          />
           <Tooltip
             contentStyle={{
               borderRadius: 14,
-              border: "1px solid rgba(148, 163, 184, 0.25)",
-              background: "rgba(15, 23, 42, 0.92)",
+              border: "1px solid rgba(255, 215, 0, 0.35)",
+              background: "rgba(17, 17, 17, 0.95)",
               color: "#f8fafc",
             }}
+            labelStyle={{ color: "#ffffff" }}
+            itemStyle={{ color: "#ffffff" }}
           />
           <Area
             type="monotone"
             dataKey="reduction"
-            stroke="#111111"
+            stroke="#FFD700"
             strokeWidth={3}
             fill="url(#reductionGradient)"
           />

@@ -24,21 +24,32 @@ export function EmissionsLineChart() {
     <div className="h-72 w-full">
       <ResponsiveContainer width="100%" height="100%" minWidth={1} minHeight={1}>
         <LineChart data={data} margin={{ left: -18, right: 8, top: 10 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.25)" />
-          <XAxis dataKey="month" tickLine={false} axisLine={false} />
-          <YAxis tickLine={false} axisLine={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.18)" />
+          <XAxis
+            dataKey="month"
+            tickLine={false}
+            axisLine={false}
+            tick={{ fill: "#ffffff", fontSize: 12 }}
+          />
+          <YAxis
+            tickLine={false}
+            axisLine={false}
+            tick={{ fill: "#ffffff", fontSize: 12 }}
+          />
           <Tooltip
             contentStyle={{
               borderRadius: 14,
-              border: "1px solid rgba(148, 163, 184, 0.25)",
-              background: "rgba(15, 23, 42, 0.92)",
+              border: "1px solid rgba(255, 215, 0, 0.35)",
+              background: "rgba(17, 17, 17, 0.95)",
               color: "#f8fafc",
             }}
+            labelStyle={{ color: "#ffffff" }}
+            itemStyle={{ color: "#ffffff" }}
           />
           <Line
             type="monotone"
             dataKey="target"
-            stroke="#111111"
+            stroke="#ffffff"
             strokeDasharray="4 4"
             strokeWidth={2}
             dot={false}
