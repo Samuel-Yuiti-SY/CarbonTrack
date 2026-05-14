@@ -4,7 +4,7 @@ CarbonTrack e uma demo simples feita em Flask para simular um painel de acompanh
 
 Este projeto nasceu como estudo pratico de Python, Flask, HTML, CSS e organizacao de telas. Ele nao usa banco de dados real nem autenticacao de producao; tudo foi montado para demonstracao e aprendizado.
 
-## O que tem na demo
+## Na demo possuímos:
 
 - Tela de login demonstrativa
 - Dashboard com indicadores
