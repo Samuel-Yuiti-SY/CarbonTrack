@@ -1,13 +1,21 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useI18n } from "@/components/providers/I18nProvider";
 
+const subscribe = () => () => {};
+
 export function ThemeToggle() {
+  const mounted = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
   const { resolvedTheme, setTheme } = useTheme();
   const { t } = useI18n();
-  const isDark = resolvedTheme === "dark";
+  const isDark = mounted && resolvedTheme === "dark";
   const nextTheme = isDark ? "light" : "dark";
 
   return (

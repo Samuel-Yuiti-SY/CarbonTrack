@@ -41,16 +41,16 @@ const pt = {
   },
   landing: {
     eyebrow: "SaaS ambiental e inteligência de carbono",
-    title: "Dashboard inteligente para monitoramento de emissões de CO2.",
+    title: "Emissões em perspectiva.",
     description:
       "CarbonTrack simula uma plataforma SaaS para empresas que precisam visualizar emissões, acompanhar metas ESG e identificar oportunidades reais de redução.",
     portfolio:
       "Esta versão foi criada como uma experiência demonstrável para portfólio, com dados fictícios e foco em produto, dados e interface.",
     benefits: [
-      "Indicadores ambientais em tempo quase real",
+      "Indicadores ambientais de uma operação simulada",
       "Gestão de frota e emissões por rota",
       "Relatórios executivos para metas ESG",
-      "Recomendações automáticas baseadas em dados",
+      "Recomendações demonstrativas para análise",
     ],
     previewTitle: "Central de emissões",
     previewSubtitle: "Operação fictícia Q2 2026",

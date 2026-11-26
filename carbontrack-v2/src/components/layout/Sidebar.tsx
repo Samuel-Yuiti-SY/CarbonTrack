@@ -40,7 +40,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
         aria-hidden
       />
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-border bg-card/95 px-4 py-4 shadow-2xl backdrop-blur transition-transform lg:sticky lg:top-0 lg:h-dvh lg:translate-x-0 lg:shadow-none ${open ? "translate-x-0" : "-translate-x-full"}`}
+        className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-border bg-card/95 px-4 py-4 shadow-2xl backdrop-blur transition-transform lg:sticky lg:top-0 lg:h-dvh lg:translate-x-0 lg:shadow-none ${open ? "translate-x-0" : "-translate-x-full invisible lg:visible"}`}
       >
         <div className="flex items-center justify-between gap-3 px-2">
           <Link href="/" className="flex items-center gap-3" onClick={onClose}>
@@ -74,6 +74,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
+                aria-current={active ? "page" : undefined}
                 className={`flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition ${
                   active
                     ? "bg-yellow-300/45 text-foreground ring-1 ring-yellow-400"
@@ -87,10 +88,10 @@ export function Sidebar({ open, onClose }: SidebarProps) {
           })}
         </nav>
 
-        <div className="rounded-2xl border border-border bg-yellow-50 p-4 text-sm">
+        <div className="rounded-2xl border border-border bg-card p-4 text-sm">
           <p className="font-semibold text-foreground">{t.common.demoBadge}</p>
           <p className="mt-2 leading-6 text-muted">
-            {t.common.updated} - Vercel ready
+            {t.landing.previewSubtitle}
           </p>
         </div>
       </aside>
