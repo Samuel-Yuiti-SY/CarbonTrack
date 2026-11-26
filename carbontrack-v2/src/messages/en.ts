@@ -41,7 +41,7 @@ const en = {
   },
   landing: {
     eyebrow: "Environmental SaaS and carbon intelligence",
-    title: "Smart dashboard for CO2 emissions monitoring.",
+    title: "Emissions in perspective.",
     description:
       "CarbonTrack simulates a SaaS platform for companies that need to visualize emissions, track ESG goals, and identify practical reduction opportunities.",
     portfolio:
