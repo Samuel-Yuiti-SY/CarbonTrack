@@ -36,36 +36,49 @@ export default function Home() {
         </nav>
       </header>
       <main id="main">
-        <section className="carbon-width carbon-hero">
-          <div className="carbon-intro">
-            <p className="carbon-eyebrow">
-              CARBONTRACK /{" "}
-              {locale === "pt"
-                ? "INTELIGÊNCIA AMBIENTAL"
-                : "ENVIRONMENTAL INTELLIGENCE"}
-            </p>
-            <h1>{t.landing.title}</h1>
-            <p className="carbon-lead">{t.landing.description}</p>
-            <Link className="carbon-primary" href="/dashboard">
-              {t.common.accessDemo}
-              <ArrowRight size={18} aria-hidden />
-            </Link>
-            <p className="carbon-disclosure">{t.landing.portfolio}</p>
-            <div className="carbon-links">
-              <Link href="/emissions">
-                {t.nav.emissions}
-                <ArrowUpRight size={15} aria-hidden />
+        <section className="carbon-hero">
+          <Image
+            className="carbon-landscape"
+            src="/images/corredor-florestal.webp"
+            alt=""
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+          />
+          <div className="carbon-width carbon-cover-content">
+            <div className="carbon-intro">
+              <p className="carbon-eyebrow">
+                CARBONTRACK /{" "}
+                {locale === "pt"
+                  ? "INTELIGÊNCIA AMBIENTAL"
+                  : "ENVIRONMENTAL INTELLIGENCE"}
+              </p>
+              <h1>{t.landing.title}</h1>
+              <p className="carbon-lead">{t.landing.description}</p>
+              <Link className="carbon-primary" href="/dashboard">
+                {t.common.accessDemo}
+                <ArrowRight size={18} aria-hidden />
               </Link>
-              <Link href="/fleet">
-                {t.nav.fleet}
-                <ArrowUpRight size={15} aria-hidden />
-              </Link>
-              <Link href="/reports">
-                {t.nav.reports}
-                <ArrowUpRight size={15} aria-hidden />
-              </Link>
+              <p className="carbon-disclosure">{t.landing.portfolio}</p>
+              <div className="carbon-links">
+                <Link href="/emissions">
+                  {t.nav.emissions}
+                  <ArrowUpRight size={15} aria-hidden />
+                </Link>
+                <Link href="/fleet">
+                  {t.nav.fleet}
+                  <ArrowUpRight size={15} aria-hidden />
+                </Link>
+                <Link href="/reports">
+                  {t.nav.reports}
+                  <ArrowUpRight size={15} aria-hidden />
+                </Link>
+              </div>
             </div>
           </div>
+        </section>
+        <div className="carbon-width carbon-observations">
           <section className="carbon-chart" aria-labelledby="chart-title">
             <div className="carbon-chart-top">
               <h2 id="chart-title">{t.dashboard.charts.monthly}</h2>
@@ -106,7 +119,7 @@ export default function Home() {
               </Link>
             </div>
           </section>
-        </section>
+        </div>
         <section className="carbon-features">
           <div className="carbon-width">
             <div className="carbon-section-title">
