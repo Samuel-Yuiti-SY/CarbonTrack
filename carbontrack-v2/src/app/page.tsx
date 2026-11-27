@@ -37,15 +37,11 @@ export default function Home() {
       </header>
       <main id="main">
         <section className="carbon-hero">
-          <Image
-            className="carbon-landscape"
-            src="/images/corredor-florestal.webp"
-            alt=""
-            fill
-            priority
-            unoptimized
-            sizes="100vw"
-          />
+          <picture>
+            <source media="(max-width: 700px)" srcSet="/images/corredor-movel.webp" />
+            <Image className="carbon-landscape" src="/images/corredor-florestal.webp"
+              alt="" fill loading="eager" fetchPriority="high" unoptimized sizes="100vw" />
+          </picture>
           <div className="carbon-width carbon-cover-content">
             <div className="carbon-intro">
               <p className="carbon-eyebrow">
@@ -112,6 +108,16 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <details className="carbon-data">
+              <summary>{locale === "pt" ? "Consultar valores mensais" : "View monthly figures"}</summary>
+              <table>
+                <thead><tr><th scope="col">{locale === "pt" ? "Mês" : "Month"}</th><th scope="col">tCO₂e</th></tr></thead>
+                <tbody>{monthlyEmissions.map((month) => (
+                  <tr key={month.month.en}><th scope="row">{month.month[locale]}</th>
+                    <td>{month.emissions.toLocaleString(locale === "pt" ? "pt-BR" : "en-US")}</td></tr>
+                ))}</tbody>
+              </table>
+            </details>
             <div className="carbon-chart-footer">
               <span>{t.common.demoBadge}</span>
               <Link href="/dashboard" aria-label={t.common.viewDashboard}>

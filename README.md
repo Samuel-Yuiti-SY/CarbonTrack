@@ -157,3 +157,5 @@ Projeto criado por: Samuel Yuiti
 E-mail: samuelyuit@gmail.com
 
 LinkedIn: https://www.linkedin.com/in/samuelyuiti/
+
+As regras de interface e acessibilidade estão no [guia de design](carbontrack-v2/DESIGN.md).

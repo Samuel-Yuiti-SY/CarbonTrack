@@ -589,3 +589,9 @@ body,
     );
   }
 }
+
+.carbon-data { padding-block: 12px; }
+.carbon-data summary { width: fit-content; cursor: pointer; font-weight: 700; padding-block: 10px; }
+.carbon-data table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.carbon-data th, .carbon-data td { padding: 7px 12px; text-align: start; border-bottom: 1px solid currentColor; }
+.carbon-data tr > :last-child { text-align: end; }
